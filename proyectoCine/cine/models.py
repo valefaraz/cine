@@ -26,11 +26,11 @@ class Proyeccion(models.Model):
     time = models.TimeField()  # hora de proyección
     status = models.CharField(max_length=10)  # activo o no activo
     sala = models.ForeignKey(Sala, on_delete=models.CASCADE)
-    Pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
+    pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
 
 
 class Butacas(models.Model):
-    proyección = models.ForeignKey(Proyeccion, on_delete=models.CASCADE)
+    proyeccion = models.ForeignKey(Proyeccion, on_delete=models.CASCADE)
     date = models.DateField()  # fecha de la venta/reserva de la entrada
     row = models.IntegerField()  # fila dentro de la sala
     seat = models.IntegerField()  # asiento dentro de la fila
